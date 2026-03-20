@@ -1,38 +1,38 @@
 # Claude Code 확장하기
 > https://code.claude.com/docs/ko/features-overview
 
-Claude Code는 코드를 추론하는 모델과 파일 작업, 검색, 실행 및 웹 접근을 위한 내장 도구를 결합합니다. 내장 도구는 대부분의 코딩 작업을 다룹니다. 이 가이드는 확장 계층을 다룹니다. Claude가 알아야 할 내용을 사용자 정의하고, 외부 서비스에 연결하고, 워크플로우를 자동화하기 위해 추가하는 기능입니다.
+Claude Code는 코드를 추론하는 모델과 파일 작업, 검색, 실행 및 웹 접근을 위한 내장 도구를 결합한다. 내장 도구는 대부분의 코딩 작업을 다룬다. 이 가이드는 확장 계층을 다룬다. Claude가 알아야 할 내용을 사용자 정의하고, 외부 서비스에 연결하고, 워크플로우를 자동화하기 위해 추가하는 기능이다.
 
 ---
 
 ## 1. 개요
 
-확장은 에이전트 루프의 다양한 부분에 연결됩니다.
+확장은 에이전트 루프의 다양한 부분에 연결된다.
 
-- **[CLAUDE.md](https://code.claude.com/docs/ko/memory)** 는 Claude가 모든 세션에서 보는 지속적인 컨텍스트를 추가합니다.
-- **[Skills](https://code.claude.com/docs/ko/skills)** 는 재사용 가능한 지식과 호출 가능한 워크플로우를 추가합니다.
-- **[MCP](https://code.claude.com/docs/ko/mcp)** 는 Claude를 외부 서비스 및 도구에 연결합니다.
-- **[Subagents](https://code.claude.com/docs/ko/sub-agents)** 는 격리된 컨텍스트에서 자신의 루프를 실행하고 요약을 반환합니다.
-- **[Agent teams](https://code.claude.com/docs/ko/agent-teams)** 는 공유 작업 및 피어 투 피어 메시징으로 여러 독립적인 세션을 조정합니다.
-- **[Hooks](https://code.claude.com/docs/ko/hooks)** 는 결정론적 스크립트로 루프 외부에서 완전히 실행됩니다.
-- **[Plugins](https://code.claude.com/docs/ko/plugins)** 및 **[marketplaces](https://code.claude.com/docs/ko/plugin-marketplaces)** 는 이러한 기능을 패키징하고 배포합니다.
+- **[CLAUDE.md](https://code.claude.com/docs/ko/memory)** 는 Claude가 모든 세션에서 보는 지속적인 컨텍스트를 추가한다.
+- **[Skills](https://code.claude.com/docs/ko/skills)** 는 재사용 가능한 지식과 호출 가능한 워크플로우를 추가한다.
+- **[MCP](https://code.claude.com/docs/ko/mcp)** 는 Claude를 외부 서비스 및 도구에 연결한다.
+- **[Subagents](https://code.claude.com/docs/ko/sub-agents)** 는 격리된 컨텍스트에서 자신의 루프를 실행하고 요약을 반환한다.
+- **[Agent teams](https://code.claude.com/docs/ko/agent-teams)** 는 공유 작업 및 피어 투 피어 메시징으로 여러 독립적인 세션을 조정한다.
+- **[Hooks](https://code.claude.com/docs/ko/hooks)** 는 결정론적 스크립트로 루프 외부에서 완전히 실행된다.
+- **[Plugins](https://code.claude.com/docs/ko/plugins)** 및 **[marketplaces](https://code.claude.com/docs/ko/plugin-marketplaces)** 는 이러한 기능을 패키징하고 배포한다.
 
-Skills는 가장 유연한 확장입니다. Skill은 지식, 워크플로우 또는 지침을 포함하는 마크다운 파일입니다. `/deploy`와 같은 명령으로 skill을 호출하거나, Claude가 관련이 있을 때 자동으로 로드할 수 있습니다. Skill은 현재 대화에서 실행되거나 subagents를 통해 격리된 컨텍스트에서 실행될 수 있습니다.
+Skills는 가장 유연한 확장이다. Skill은 지식, 워크플로우 또는 지침을 포함하는 마크다운 파일이며, `/deploy`와 같은 명령으로 skill을 호출하거나 Claude가 관련이 있을 때 자동으로 로드할 수 있다. Skill은 현재 대화에서 실행되거나 subagents를 통해 격리된 컨텍스트에서 실행될 수 있다.
 
 ### 기능을 목표에 맞추기
 
-기능은 Claude가 모든 세션에서 보는 항상 켜진 컨텍스트부터 사용자나 Claude가 호출할 수 있는 온디맨드 기능, 특정 이벤트에서 실행되는 백그라운드 자동화까지 다양합니다. 아래 표는 사용 가능한 기능과 각 기능이 언제 적절한지 보여줍니다.
+기능은 Claude가 모든 세션에서 보는 항상 켜진 컨텍스트부터 사용자나 Claude가 호출할 수 있는 온디맨드 기능, 특정 이벤트에서 실행되는 백그라운드 자동화까지 다양하다. 아래 표는 사용 가능한 기능과 각 기능이 언제 적절한지 보여준다.
 
 | 기능 | 수행 작업 | 사용 시기 | 예시 |
 |------|----------|----------|------|
-| **CLAUDE.md** | 모든 대화에서 로드되는 지속적인 컨텍스트 | 프로젝트 규칙, "항상 X를 수행" 규칙 | "npm이 아닌 pnpm을 사용하세요. 커밋하기 전에 테스트를 실행하세요." |
-| **Skill** | Claude가 사용할 수 있는 지침, 지식 및 워크플로우 | 재사용 가능한 콘텐츠, 참조 문서, 반복 가능한 작업 | `/deploy`는 배포 체크리스트를 실행합니다. 엔드포인트 패턴이 있는 API 문서 skill |
+| **CLAUDE.md** | 모든 대화에서 로드되는 지속적인 컨텍스트 | 프로젝트 규칙, "항상 X를 수행" 규칙 | "npm이 아닌 pnpm 사용, 커밋 전 테스트 실행" |
+| **Skill** | Claude가 사용할 수 있는 지침, 지식 및 워크플로우 | 재사용 가능한 콘텐츠, 참조 문서, 반복 가능한 작업 | `/deploy`로 배포 체크리스트 실행, API 문서 skill |
 | **Subagent** | 요약된 결과를 반환하는 격리된 실행 컨텍스트 | 컨텍스트 격리, 병렬 작업, 특화된 워커 | 많은 파일을 읽지만 주요 결과만 반환하는 연구 작업 |
-| **Agent teams** | 여러 독립적인 Claude Code 세션 조정 | 병렬 연구, 새로운 기능 개발, 경쟁하는 가설로 디버깅 | 보안, 성능 및 테스트를 동시에 확인하는 검토자 생성 |
-| **MCP** | 외부 서비스에 연결 | 외부 데이터 또는 작업 | 데이터베이스 쿼리, Slack에 게시, 브라우저 제어 |
-| **Hook** | 이벤트에서 실행되는 결정론적 스크립트 | 예측 가능한 자동화, LLM 없음 | 모든 파일 편집 후 ESLint 실행 |
+| **Agent teams** | 여러 독립적인 Claude Code 세션 조정 | 병렬 연구, 새로운 기능 개발, 경쟁하는 가설로 디버깅 | 보안/성능/테스트를 동시에 확인하는 검토자 생성 |
+| **MCP** | 외부 서비스에 연결 | 외부 데이터 또는 작업 | DB 쿼리, Slack 게시, 브라우저 제어 |
+| **Hook** | 이벤트에서 실행되는 결정론적 스크립트 | 예측 가능한 자동화 (LLM 없음) | 모든 파일 편집 후 ESLint 실행 |
 
-**Plugins**는 패키징 계층입니다. 플러그인은 skill, hook, subagent 및 MCP 서버를 단일 설치 가능한 단위로 번들합니다. 플러그인 skill은 네임스페이스됩니다(예: `/my-plugin:review`). 따라서 여러 플러그인이 공존할 수 있습니다. 여러 저장소에서 동일한 설정을 재사용하거나 **marketplace**를 통해 다른 사용자에게 배포하려는 경우 플러그인을 사용하세요.
+**Plugins**는 패키징 계층이다. 플러그인은 skill, hook, subagent 및 MCP 서버를 단일 설치 가능한 단위로 번들한다. 플러그인 skill은 네임스페이스된다(예: `/my-plugin:review`). 따라서 여러 플러그인이 공존할 수 있다. 여러 저장소에서 동일한 설정을 재사용하거나 **marketplace**를 통해 다른 사용자에게 배포하려는 경우 플러그인을 사용한다.
 
 ---
 
