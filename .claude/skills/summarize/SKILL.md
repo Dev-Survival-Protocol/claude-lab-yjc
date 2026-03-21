@@ -1,21 +1,24 @@
 ---
-name: cheatsheet
-description: URL을 입력받아 해당 내용을 기반으로 치트시트 문서를 생성한다.
+name: summarize
+description: URL을 입력받아 해당 내용을 기반으로 요약 문서를 생성한다.
 user_invocable: true
 arguments:
   - name: url
-    description: 치트시트를 만들 대상의 URL
+    description: 요약할 대상의 URL
+    required: true
+  - name: path
+    description: 문서를 저장할 디렉토리 경로
     required: true
 ---
 
-# 치트시트 생성 스킬
+# 요약 문서 생성 스킬
 
 ## 작업 절차
 
 1. `$ARGUMENTS.url`에서 웹 페이지 내용을 가져온다.
-2. 핵심 내용을 추출하여 치트시트 마크다운 문서를 작성한다.
-3. `cheatsheet/` 폴더에 `[주제]-cheatsheet.md` 파일명으로 저장한다.
-4. 문서가 완성되면 README.md에 해당 치트시트 링크를 추가한다.
+2. 핵심 내용을 추출하여 요약 마크다운 문서를 작성한다.
+3. `$ARGUMENTS.path` 경로에 `[주제].md` 파일명으로 저장한다.
+4. 문서가 완성되면 README.md에 해당 문서 링크를 추가한다.
 
 ## 문서 작성 규칙
 
@@ -28,7 +31,7 @@ arguments:
 반드시 아래 순서를 따른다:
 
 ```markdown
-# [주제] 치트시트
+# [주제]
 
 > 원본: [URL]($ARGUMENTS.url)
 

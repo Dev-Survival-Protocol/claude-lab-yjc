@@ -1,12 +1,12 @@
 Claude-lab
 
-## 1차 스터디
+## Claude Code 핵심 개념
 > [클로드 코드 공식 문서](https://code.claude.com/docs/ko/how-claude-code-works) -핵심 개념 모두 학습
 
 - [Claude Code의 작동 방식](claude-code-basic/how-claude-code-works.md)
 - [Claude Code 확장하기](claude-code-basic/extend-claude-code.md)
 
-## 치트시트
-- [Skills 치트시트](cheatsheet/skills-cheatsheet.md)
-- [Subagent 치트시트](cheatsheet/sub-agents-cheatsheet.md)
-- [에이전트 팀 치트시트](cheatsheet/agent-teams-cheatsheet.md)
+## Claude Code로 빌드하기
+- [Skills](building-with-claude-code/skills.md)
+- [Subagent](building-with-claude-code/sub-agents.md)
+- [Agent teams](building-with-claude-code/agent-teams.md)
