@@ -1,4 +1,4 @@
-# Skills 치트시트
+# Skills
 
 > 원본: [Skills](https://code.claude.com/docs/ko/skills)
 

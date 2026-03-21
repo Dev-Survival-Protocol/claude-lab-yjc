@@ -1,4 +1,4 @@
-# Subagent 치트시트
+# Subagent
 
 > 원본: [사용자 정의 subagent 만들기](https://code.claude.com/docs/ko/sub-agents)
 

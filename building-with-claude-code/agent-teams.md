@@ -1,4 +1,4 @@
-# 에이전트 팀(Agent Teams) 치트시트
+# 에이전트 팀(Agent Teams)
 
 > 원본: [https://code.claude.com/docs/ko/agent-teams](https://code.claude.com/docs/ko/agent-teams)
 
