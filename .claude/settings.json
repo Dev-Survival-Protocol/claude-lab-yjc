@@ -1,5 +1,18 @@
 {
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "hooks": {
+    "InstructionsLoaded": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat | jq -c '{event: \"InstructionsLoaded\", path: .file_path, time: now | todate}' >> ./log/claude-instructions.log"
+          }
+        ]
+      }
+    ]
   }
 }

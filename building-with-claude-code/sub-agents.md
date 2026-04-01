@@ -75,11 +75,11 @@ Subagent는 **YAML frontmatter가 있는 Markdown 파일**로 정의한다.
 
 ### 메모리 범위 (memory)
 
-| 범위 | 저장 위치 | 용도 |
-|:--|:--|:--|
-| `user` | `~/.claude/agent-memory/<name>/` | 모든 프로젝트에서 학습 기억 (권장 기본값) |
-| `project` | `.claude/agent-memory/<name>/` | 프로젝트별 지식, 버전 제어 공유 가능 |
-| `local` | `.claude/agent-memory-local/<name>/` | 프로젝트별이지만 버전 제어 제외 |
+| 범위        | 저장 위치                                | 용도                       |
+| :-------- | :----------------------------------- | :----------------------- |
+| `user`    | `~/.claude/agent-memory/<name>/`     | 모든 프로젝트에서 학습 기억 (권장 기본값) |
+| `project` | `.claude/agent-memory/<name>/`       | 프로젝트별 지식, 버전 제어 공유 가능    |
+| `local`   | `.claude/agent-memory-local/<name>/` | 프로젝트별이지만 버전 제어 제외        |
 
 ### Hook 이벤트 (hooks)
 

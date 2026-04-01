@@ -1,3 +1,8 @@
+---
+paths:
+  - "building-with-claude-code/**"
+---
+
 ## 환경 설정
 
 - Agent Teams 실험 기능 활성화됨 (`CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1`)
