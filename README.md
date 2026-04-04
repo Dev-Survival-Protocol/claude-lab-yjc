@@ -6,6 +6,7 @@ Claude-lab
 - [Claude Code의 작동 방식](claude-code-basic/how-claude-code-works.md)
 - [Claude Code 확장하기](claude-code-basic/extend-claude-code.md)
 - [Claude가 프로젝트를 기억하는 방법](claude-code-basic/memory.md)
+- [.claude 디렉토리 구조](claude-code-basic/claude-directory.md)
 
 ## Claude Code로 빌드하기
 - [Skills](building-with-claude-code/skills.md)
