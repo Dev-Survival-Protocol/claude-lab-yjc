@@ -7,6 +7,8 @@ Claude-lab
 - [Claude Code 확장하기](claude-code-basic/extend-claude-code.md)
 - [Claude가 프로젝트를 기억하는 방법](claude-code-basic/memory.md)
 - [.claude 디렉토리 구조](claude-code-basic/claude-directory.md)
+- [컨텍스트 윈도우](claude-code-basic/context-window.md)
+- [권한 모드 선택](claude-code-basic/permission-modes.md)
 
 ## Claude Code로 빌드하기
 - [Skills](building-with-claude-code/skills.md)

@@ -6,3 +6,5 @@
 - [discover-plugins.md 팩트체크 결과](project_discover_plugins_doc.md) — 2026-03-22 수행한 공식 docs 대비 오류 검토 기록 (agent-sdk-dev 누락, /reload-plugins LSP 제한 누락, 버전 요구사항 누락)
 - [memory.md 팩트체크 결과](project_memory_doc.md) — 2026-03-24 수행한 공식 docs 대비 오류 검토 기록 (자동 메모리 사용 목적 표현 누락, 사용자 수준 규칙 우선순위 혼란, autoMemoryDirectory 허용 범위 누락, MEMORY.md 200줄 제한 범위 미구분)
 - [claude-directory.md 팩트체크 결과](project_claude_directory_doc.md) — 2026-04-04 수행한 공식 docs 대비 오류 검토 기록 (설정 우선순위 5단계 누락/CLI 최우선 오류, CLAUDE.local.md/managed-settings.json 누락, memory:local 저장경로 누락)
+- [context-window.md 팩트체크 결과](project_context_window_doc.md) — 2026-04-11 수행한 공식 docs 대비 오류 검토 기록 (ENABLE_TOOL_SEARCH=auto 동작 오류, 기본값 표시 오류 발견)
+- [permission-modes.md 팩트체크 결과](project_permission_modes_doc.md) — 2026-04-11 수행한 공식 docs 대비 오류 검토 기록 (--enable-auto-mode 플래그 오류, plan 셸 명령 승인 누락, bypassPermissions 모순 설명, 분류기 입력 구조 누락)
