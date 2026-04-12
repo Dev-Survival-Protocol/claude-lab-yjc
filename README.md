@@ -16,3 +16,4 @@ Claude-lab
 - [Agent teams](building-with-claude-code/agent-teams.md)
 - [플러그인 만들기](building-with-claude-code/plugins.md)
 - [플러그인 발견 및 설치](building-with-claude-code/discover-plugins.md)
+- [Hooks](building-with-claude-code/hooks.md)

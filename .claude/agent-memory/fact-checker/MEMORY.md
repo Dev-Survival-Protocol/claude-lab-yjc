@@ -8,3 +8,4 @@
 - [claude-directory.md 팩트체크 결과](project_claude_directory_doc.md) — 2026-04-04 수행한 공식 docs 대비 오류 검토 기록 (설정 우선순위 5단계 누락/CLI 최우선 오류, CLAUDE.local.md/managed-settings.json 누락, memory:local 저장경로 누락)
 - [context-window.md 팩트체크 결과](project_context_window_doc.md) — 2026-04-11 수행한 공식 docs 대비 오류 검토 기록 (ENABLE_TOOL_SEARCH=auto 동작 오류, 기본값 표시 오류 발견)
 - [permission-modes.md 팩트체크 결과](project_permission_modes_doc.md) — 2026-04-11 수행한 공식 docs 대비 오류 검토 기록 (--enable-auto-mode 플래그 오류, plan 셸 명령 승인 누락, bypassPermissions 모순 설명, 분류기 입력 구조 누락)
+- [hooks.md 팩트체크 결과](project_hooks_doc.md) — 2026-04-12 수행한 공식 docs 대비 오류 검토 기록 (HTTP 타임아웃 누락, Stop 중복 행, $CLAUDE_ENV_FILE 범위 미표기, 매처 패턴 다수 불완전)
