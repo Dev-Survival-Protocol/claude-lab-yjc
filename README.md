@@ -10,6 +10,7 @@ Claude-lab
 - [컨텍스트 윈도우](claude-code-basic/context-window.md)
 - [권한 모드 선택](claude-code-basic/permission-modes.md)
 - [일반적인 워크플로우](claude-code-basic/common-workflows.md)
+- [모범 사례](claude-code-basic/best-practices.md)
 
 ## Claude Code로 빌드하기
 - [Skills](building-with-claude-code/skills.md)
